@@ -1,0 +1,32 @@
+{
+    "name": "@openview/plugin-callssms",
+    "version": "1.0.0",
+    "description": "NativePHP Mobile plugin for phone calls, SMS, WhatsApp, and contact picker",
+    "main": "callssms.js",
+    "module": "callssms.js",
+    "types": "callssms.d.ts",
+    "exports": {
+        ".": {
+            "import": "./callssms.js",
+            "require": "./callssms.js",
+            "types": "./callssms.d.ts"
+        }
+    },
+    "files": [
+        "callssms.js",
+        "callssms.d.ts"
+    ],
+    "keywords": [
+        "nativephp",
+        "nativephp-plugin",
+        "mobile",
+        "calls",
+        "sms",
+        "whatsapp",
+        "contacts"
+    ],
+    "license": "MIT",
+    "peerDependencies": {
+        "@nativephp/mobile": "*"
+    }
+}

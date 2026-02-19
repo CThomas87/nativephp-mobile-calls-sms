@@ -1,0 +1,59 @@
+{
+    "namespace": "Callssms",
+
+    "bridge_functions": [
+        {
+            "name": "Callssms.OpenPhoneDialer",
+            "android": "com.openview.plugins.callssms.CallsSmsFunctions.OpenPhoneDialer",
+            "ios": "CallsSmsFunctions.OpenPhoneDialer",
+            "description": "Open the native phone dialer with a pre-filled number and optional auto-call"
+        },
+        {
+            "name": "Callssms.OpenSms",
+            "android": "com.openview.plugins.callssms.CallsSmsFunctions.OpenSms",
+            "ios": "CallsSmsFunctions.OpenSms",
+            "description": "Open the native SMS composer with a pre-filled recipient and message body"
+        },
+        {
+            "name": "Callssms.OpenWhatsapp",
+            "android": "com.openview.plugins.callssms.CallsSmsFunctions.OpenWhatsapp",
+            "ios": "CallsSmsFunctions.OpenWhatsapp",
+            "description": "Open WhatsApp with a pre-filled number in message or call mode"
+        },
+        {
+            "name": "Callssms.PickContact",
+            "android": "com.openview.plugins.callssms.CallsSmsFunctions.PickContact",
+            "ios": "CallsSmsFunctions.PickContact",
+            "description": "Open the contact picker to select a phone number (device or WhatsApp contacts)"
+        },
+        {
+            "name": "Callssms.RequestPermissions",
+            "android": "com.openview.plugins.callssms.CallsSmsFunctions.RequestPermissions",
+            "ios": "CallsSmsFunctions.RequestPermissions",
+            "description": "Request all required runtime permissions (CALL_PHONE, READ_CONTACTS). Exits the app if denied."
+        }
+    ],
+
+    "events": [
+        "Openview\\Callssms\\Events\\ContactSelected"
+    ],
+
+    "android": {
+        "min_version": 33,
+        "permissions": [
+            "android.permission.CALL_PHONE",
+            "android.permission.READ_CONTACTS"
+        ],
+        "dependencies": {
+            "implementation": []
+        }
+    },
+
+    "ios": {
+        "min_version": "18.0",
+        "info_plist": {
+            "NSContactsUsageDescription": "Access your contacts to quickly pre-fill phone numbers for calls and messages.",
+            "LSApplicationQueriesSchemes": ["whatsapp", "tel", "telprompt", "sms"]
+        }
+    }
+}
