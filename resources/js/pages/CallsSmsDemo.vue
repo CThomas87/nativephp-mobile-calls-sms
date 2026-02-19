@@ -9,11 +9,9 @@
  *
  * Inertia.js + Vue 3 Composition API + TailwindCSS v4
  */
-import { BridgeCall } from '@nativephp/mobile';
 import { Head } from '@inertiajs/vue3';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import {
-    Events,
     OffContactSelected,
     OnContactSelected,
     openPhoneDialer,
@@ -21,6 +19,7 @@ import {
     openWhatsapp,
     pickContact,
 } from '@callssms';
+import { BridgeCall } from '@nativephp/mobile';
 
 // ─── Reactive state ──────────────────────────────────────────────────────────
 
@@ -35,9 +34,6 @@ const service = ref<'device' | 'whatsapp'>('device');
 
 /** Whether to auto-call instead of just opening the dialler */
 const autoCall = ref(false);
-
-/** WhatsApp mode when service is WhatsApp: 'message' | 'call' */
-const waMode = ref<'message' | 'call'>('message');
 
 /** Loading / busy flag */
 const busy = ref(false);
